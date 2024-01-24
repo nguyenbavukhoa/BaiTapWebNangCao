@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bai2.css">
+</head>
+
+<body>
+    <form name="frmVe">
+        <p>
+            <input type="text" name="txtChieuCao" id="textfield" oninput="checkValue(this)"/>
+            <input type="button" name="button1" id="button1" value="Tam giác cân" onClick="VeTamGiacCan();" />
+            <input type="button" name="button2" id="button2" value="Tam giác vuông" onClick="VeTamGiacVuong();" />
+            <br />
+            <i>Chiều cao n nguyên dương và 0 < n <=10</i>
+        </p>
+        <table id="triangleTable">
+        </table>
+
+        <div >Tổng chiều cao:  
+            <span id="tongCC"></span> 
+        </div>
+
+        <div >Tổng đường chéo trái:  
+            <span id="tongDCT"></span> 
+        </div>
+
+        <div >Tổng đường chéo phải:  
+            <span id="tongDCP"></span> 
+        </div>
+
+        <div >Tổng cạnh đáy:  
+            <span id="tongCD"></span> 
+        </div>
+
+        <script src="bai2.js"> </script>
+    </form>
+</body>
+
+</html>

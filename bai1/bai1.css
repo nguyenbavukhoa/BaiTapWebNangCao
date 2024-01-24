@@ -1,0 +1,28 @@
+table {
+    margin-bottom: 30px;
+}
+
+table,td,th {
+    border: 4px groove rgb(208, 206, 206);
+    border-collapse: collapse;
+}
+
+td,th {
+    width: 150px;
+    height: 20px;
+    font-size: 20px; 
+    text-align: center;
+    justify-items: center;
+}
+
+input {
+    width: 30px;
+    height: 100%;
+    margin-bottom: 1px;
+}
+
+.checked {
+    background-color: rgb(245, 133, 133);
+    color: aliceblue;
+    font-weight: bold;
+}

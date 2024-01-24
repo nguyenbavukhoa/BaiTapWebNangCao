@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTJS Calendar</title>
+    <link rel="stylesheet" href="./bai1.css">
+</head>
+
+<body>
+    <table id="calendar">
+        <thead>
+            <tr>
+                <th>
+                    <input type="button" name="button1" id="button1" value="&#60;" onClick=" decrease();" />
+
+                </th>
+                <th colspan="5"><span id="monthId">January</span> <span id="yearId">2024</span></th>
+                <th>
+                    <input type="button" name="button1" id="button1" value="&#62;" onClick=" increase();" />
+                </th>
+            </tr>
+
+            <tr>
+                <td>Mo</td>
+                <td>Tu</td>
+                <td>We</td>
+                <td>Th</td>
+                <td>Fr</td>
+                <td>Sa</td>
+                <td>Su</td>
+            <tr>
+        </thead>
+
+
+        <tbody id="dateId">
+            <tr>
+                <td class="checked">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+    <script src="./bai1.js"></script>
+
+
+</body>
+
+</html>

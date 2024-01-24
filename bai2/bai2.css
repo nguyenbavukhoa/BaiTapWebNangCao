@@ -1,0 +1,31 @@
+div {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+table {
+    margin-bottom: 30px;
+}
+
+table,td {
+    border: 4px groove rgb(208, 206, 206);
+    border-collapse: collapse;
+}
+
+td {
+    width: 35px;
+    height: 35px;
+    font-size: larger;
+    font-weight: 550;
+    text-align: center;
+    justify-items: center;
+}
+
+.blue {
+    background-color: rgb(131, 226, 243);
+}
+
+.pink {
+    background-color: rgb(232, 128, 206);
+}
