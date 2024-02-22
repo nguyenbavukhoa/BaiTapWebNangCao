@@ -10,7 +10,7 @@ table,td,th {
 td,th {
     width: 150px;
     height: 20px;
-    font-size: 20px; 
+    font-size: 25px; 
     text-align: center;
     justify-items: center;
 }
@@ -22,7 +22,6 @@ input {
 }
 
 .checked {
-    background-color: rgb(245, 133, 133);
-    color: aliceblue;
+    color: rgb(245, 44, 44);
     font-weight: bold;
 }

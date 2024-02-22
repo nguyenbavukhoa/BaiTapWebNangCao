@@ -20,8 +20,8 @@ monthList = [
 
 
 var currentDate = new Date();
-var month = currentDate.getMonth()+1;
-console.log(month);
+var month = currentDate.getMonth() + 1;
+
 var year = currentDate.getFullYear();
 var cdate = currentDate.getDate();
 
@@ -35,11 +35,19 @@ Object.prototype.removeLocation = function () {
 }
 
 function createCalendar(month, year, date) {
+    var check = new Date();
+    if(check.getMonth() + 1 == month && check.getFullYear() == year ){
+        var note = true;
+        date = check.getDate();
+        console.log("true");
+    }
     var numberOfDays = getDaysInMonth(year, month);
     calendar.innerHTML = "";
 
-    var dayStartOrder = getDayOfWeek(year, month, 1)-1;
-
+    var dayStartOrder = getDayOfWeek(year, month, 1) - 1;
+    if (dayStartOrder == -1) {
+        dayStartOrder = 6;
+    }
     if (numberOfDays == 0) {
         rows = Math.ceil((numberOfDays - 1) / 7) + 1;
 
@@ -56,18 +64,9 @@ function createCalendar(month, year, date) {
 
     var location = 0;
 
-    if (date != null) {
+    if (note == true) {
         location = getDayOfWeek(year, month, date);
-    } else {
-        location = 1;
     }
-    
-    if(location == 0) {
-        location = 6;
-    } else {
-        location--;
-    }
-
 
     for (var i = 0; i < rows; i++) {
         rowsElement = [];
@@ -89,11 +88,12 @@ function createCalendar(month, year, date) {
 
         }
 
-        if (date >= startNumber && date <= startNumber + 7) {
-            rowsElement[location].addLocation();
+        if (note == true) {
+            if (date >= startNumber && date <= startNumber + 7) {
+                rowsElement[location].addLocation();
+            }
         }
         for (var z = start; z < cols; z++) {
-
             rowsElement[z].setAttribute("id", `date${startNumber}`);
             rowsElement[z].innerText = startNumber;
             startNumber++;
@@ -109,11 +109,11 @@ function createCalendar(month, year, date) {
 
     }
 
-    monthId.innerText = monthList[month-1];
+    monthId.innerText = monthList[month - 1];
     yearId.innerText = year;
 }
 
-window.onload = createCalendar(month, year, cdate);
+window.onload = createCalendar(month, year, cdate, true);
 
 
 function getDaysInMonth(year, month) {
@@ -143,37 +143,20 @@ function getDayOfWeek(year, month, day) {
 }
 
 function increase() {
-    let nowlocation = document.querySelector(".checked");
-    let nowdate = parseInt(nowlocation.innerText);
-    let numberOfDays = getDaysInMonth(year, month + 1);
-
-    if (nowdate < numberOfDays) {
-        nowlocation.removeLocation();
-        document.getElementById(`date${nowdate + 1}`).addLocation();
-    } else {
-        if (month == 12) {
-            month = 1;
-            year++;
-        } else month++;
-        createCalendar(month, year, 1);
-    }
-
+    if (month == 12) {
+        month = 1;
+        year++;
+    } else month++;
+    createCalendar(month, year, 1);
 }
 
 function decrease() {
-    let nowlocation = document.querySelector(".checked");
-    let nowdate = parseInt(nowlocation.innerText);
-    if (nowdate > 1) {
-        nowlocation.removeLocation();
-        document.getElementById(`date${nowdate - 1}`).addLocation();
-    } else {
-        if (month == 1) {
-            month = 12;
-            year--;
-        } else month--;
-        let numberOfDays = getDaysInMonth(year, month);
-        console.log(month, year, numberOfDays);
-        createCalendar(month, year, numberOfDays);
-    }
+    if (month == 1) {
+        month = 12;
+        year--;
+    } else month--;
+    let numberOfDays = getDaysInMonth(year, month);
+    console.log(month, year, 1);
+    createCalendar(month, year, 1);
 
 }
